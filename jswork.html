@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Javascript example</title>
+<!--Anything inside of a tag is considered to be an element.-->
+<!--The code in the script tags are part of the script element-->
+        <script>
+            function changeCity()
+            {
+                // get the h1 element
+                var e = document.getElementById("cityName");
+                
+                var i = document.getElementById("cityImage");                
+
+                //change inner html of the h1 element
+                if (e.innerHTML == "Wollongong")
+                {
+                    e.innerHTML = "Sydney";
+                    i.src = "img/syd.jpeg";
+                    alert("woof woof");
+                }
+                else if (e.innerHTML == "Sydney")
+                {
+                    e.innerHTML = "Adelaide";
+                    i.src = "img/adl.jpeg";
+                    alert("meow meow");
+                }
+                else
+                {
+                    e.innerHTML = "Wollongong";
+                    i.src = "img/gong.jpeg";
+                    alert("ribbit ribbit");
+                }
+
+            }
+
+            var city ="wollongong";
+
+            function changeFrogtoDog()
+                {
+                // get the h1 element
+                document.getElementById("fClick").innerHTML= "dog";
+                }
+            
+            function changeText()
+                {
+                var q = document.getElementById("silly");
+                q.innerHTML = "<b><font color='red' size='7'>of an</font></b>";
+                }
+
+            function sayHi()
+            {
+                //get element
+                var e = document.getElementById("nameField");
+
+                //extract the text
+                var firstName = e.value;
+
+                //form the greeting message
+                var message = "Hi " + firstName + "!";
+
+                //alert the greeting message
+                alert(message);
+
+                var q = document.getElementById("university");
+                q.innerHTML = firstName;
+            }
+
+            function writeName()
+            {
+                //get firstname
+                var firstNameBox = document.getElementById("fnameBox");
+                var firstName = firstNameBox.value;
+
+                //get lastname
+                var lastNameBox = document.getElementByID("lnameBox");
+                var lastName = lastNameBox.value;
+
+                //formulate the fullname
+                var fullname = firstName + " " + lastName;
+                
+                //write fullname to the 3rd box
+                var fullNameBox = document.getElementById("fullnameBox");
+                fullNameBox.value = fullname;
+            }
+
+            function displayNumber(number, word, jp, uk)
+            {
+                //get element
+                var e=document.getElementById("dory");
+                var n=document.getElementById("nihon");
+                var b=document.getElementById("uk");
+
+                //ask dory to display number
+                e.innerHTML= number + " " + word;
+                n.innerHTML= number + " " + jp;
+                b.value= number + " " + uk;
+            }
+
+            var language = "english";
+
+            function modeJapanese()
+            {
+                //get element
+                language="japanese";
+                console.log(language);
+            }
+
+            function modeEnglish()
+            {
+                language="english";
+                console.log(language);
+            }
+
+            function display2L(number, eng, jpn)
+            {
+                //super dory
+                var m = document.getElementById("switcher");
+
+                //super dory to display number 
+                if (language=="english")
+                {
+                    m.innerHTML = number + " " + eng;
+                }
+                else if (language=="japanese")
+                {
+                    m.innerHTML = number + " " + jpn;
+                }
+            }
+
+            function displaySum()
+            {
+                //get 1st number
+                var e1 = document.getElementById("field1");
+                var number1 = Number(e1.value);
+                console.log(number1);
+
+                //get 2nd no.
+                var e2 = document.getElementById("field2");
+                var number2 = Number(e2.value);
+                console.log(number2);
+
+                //get 3rd no.
+                var total = number1 + number2;
+                console.log(total);
+
+                // display the sum
+                var e3 = document.getElementById("cal")
+                e3.value = total;
+                
+            }
+
+            function totaler(no)
+            {
+                var e1 = document.getElementById("b1");
+                var e2 = e1.innerHTML;
+                var e3 = Number(no) + Number(e2);
+                e1.innerHTML = e3;
+            }
+
+        </script>
+    </head>
+<!--The city variable is loaded on the memory once the file is opened. 
+    Variables inside of the function will only load once the function is ran-->
+
+    <body>
+
+        <button onClick="totaler(0)">0</button>
+        <button onClick="totaler(1)">1</button>
+        <button onClick="totaler(2)">2</button>
+        <button onClick="totaler(3)">3</button>
+        <button onClick="totaler(4)">4</button>
+        <button onClick="totaler(5)">5</button>
+        <button onClick="totaler(6)">6</button>
+        <button onClick="totaler(7)">7</button>
+        <button onClick="totaler(8)">8</button>
+        <button onClick="totaler(9)">9</button>
+        <br/>
+        Total = <div id = "b1">0</div>
+
+        <br/><br/>
+        1st Number: <input id="field1" type = "text" /> <br/>
+        2nd Number: <input id="field2" type = "text" /> <br/>
+        <button onClick="displaySum()">sum</button>
+        <input id="cal" type="text" /> <br/><br/><br/>
+        <button onClick="display2L(0, 'zero', 'zero',)">
+            0
+        </button>
+
+        <button onClick="display2L(1, 'one', 'Ichi',)">
+            1
+        </button>
+
+        <button onClick="display2L(2, 'two', 'Ni',)">
+            2
+        </button>
+
+        <button onClick="display2L(3, 'three',)">
+            3
+        </button>
+
+        <button onClick="display2L(4, 'four', 'Yon',)">
+            4
+        </button>
+
+        <button onClick="display2L(5, 'five', 'Go',)">
+            5
+        </button>
+
+        <button onClick="display2L(6, 'six', 'Roku',)">
+            6
+        </button>
+
+        <button onClick="display2L(7, 'seven', 'Nana',)">
+            7   
+        </button>
+
+        <button onClick="display2L(8, 'eight', 'Hachi',)">
+            8
+        </button>
+
+        <button onClick="display2L(9, 'nine', 'Kyuu',)">
+            9
+        </button>
+
+        <button onClick="modeEnglish()">
+            English
+        </button>
+
+        <button onClick="modeJapanese()">
+            Japanese
+        </button>
+        
+        <br/><br/><br/>
+
+        <span id="switcher" style="color:red;font-size:40px;"></span>
+
+        <br/><br/><br/>
+        <button onClick="displayNumber(0, 'zero', 'zero', 'zero')">
+            0
+        </button>
+
+        <button onClick="displayNumber(1, 'one', 'Ichi', 'one')">
+            1
+        </button>
+
+        <button onClick="displayNumber(2, 'two', 'Ni', 'two')">
+            2
+        </button>
+
+        <button onClick="displayNumber(3, 'three', 'San', 'three')">
+            3
+        </button>
+
+        <button onClick="displayNumber(4, 'four', 'Yon', 'four')">
+            4
+        </button>
+
+        <button onClick="displayNumber(5, 'five', 'Go', 'five')">
+            5
+        </button>
+
+        <button onClick="displayNumber(6, 'six', 'Roku', 'six')">
+            6
+        </button>
+
+        <button onClick="displayNumber(7, 'seven', 'Nana', 'seven')">
+            7   
+        </button>
+
+        <button onClick="displayNumber(8, 'eight', 'Hachi', 'eight')">
+            8
+        </button>
+
+        <button onClick="displayNumber(9, 'nine', 'Kyuu', 'nine')">
+            9
+        </button>
+
+        <div id="dory" style="color:red;font-size:40px;">
+        </div>
+<!--Ichi, ni, san, yon, go, roku, na, hachi, kyu-->
+        Japanese: <div id="nihon">
+
+        </div> <br/>
+        English: <input id="uk" type="text"/>
+
+
+    <br/><br/>
+        First name: <input id="fnameBox"  type ="text" /> <br/><br/>
+        Last name: <input id="lnameBox" type ="text" /> <br/><br/>
+        <button onClick="writeName()">Write Name</button> <br/><br/>
+        Full Name: <input id="fullnameBox" type="text" />
+        <span id="blankfillname">Full Name:</span>
+        <br/>
+        <br/>
+        Enter your name:
+        <input id="nameField" type="text" />
+        <button onClick="sayHi()">
+            Hi
+        </button>
+
+        
+<!--inner html element-->
+        <h1 id="university">UOW</h1>
+
+        <div id="bag">
+            inner html <span id="silly">of an</span> element
+        </div>
+        <button onClick="changeText()">Hi2</button>
+
+        <h1 id="cityName" onClick = "changeCity()">Wollongong</h1>
+
+        <img onClick="changeCity()" id="cityImage" src ="img/gong.jpeg" />
+
+        <ul>
+            <li id="fClick" onClick="changeFrogtoDog">frog</li>
+            <li id="eClick" onClick= "changeFrogtoDog()">emu</li>
+            <li>cat</li>
+        </ul>
+    </body>
+
+</html>

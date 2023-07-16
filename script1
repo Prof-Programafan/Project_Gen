@@ -1,0 +1,27 @@
+function showSelection()
+{
+    // get the 1st subject
+
+    var inputField1 = document.getElementById("input1");
+    var subject1 = inputField1.value;
+
+    // get the 2nd subject
+
+    var inputField2 = document.getElementById("input2");
+    var subject2 = inputField2.value;
+
+    // get the 3rd subject
+
+    var inputField3 = document.getElementById("input3");
+    var subject3 = inputField3.value;
+
+    // get the 4th subject
+
+    var inputField4 = document.getElementById("input4");
+    var subject4 = inputField4.value;
+
+    // get the 5th subject
+
+    var inputField5 = document.getElementById("input5");
+    var subject5 = inputField5.value;
+}
